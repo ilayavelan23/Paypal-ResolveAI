@@ -46,6 +46,17 @@ class Settings(BaseSettings):
     ]
 
     @property
+    def allowed_cors_origins(self) -> List[str]:
+        origins = list(self.CORS_ORIGINS)
+        custom_origins = os.getenv("ALLOWED_ORIGINS") or os.getenv("CORS_ORIGINS")
+        if custom_origins:
+            for o in custom_origins.split(","):
+                o_clean = o.strip()
+                if o_clean and o_clean not in origins:
+                    origins.append(o_clean)
+        return origins
+
+    @property
     def PAYPAL_API_BASE(self) -> str:
         env = (self.PAYPAL_ENV or "sandbox").lower()
         return "https://api-m.sandbox.paypal.com" if env == "sandbox" else "https://api-m.paypal.com"

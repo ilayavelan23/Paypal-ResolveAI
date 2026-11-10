@@ -8,6 +8,8 @@
  * mock sandbox fallback mode clearly marked as DEMO DATA for frontend testing.
  */
 
+import { getApiUrl } from './apiConfig';
+
 export interface PayPalOAuthTokenResponse {
   access_token: string;
   token_type: string;
@@ -41,7 +43,7 @@ export class PayPalSandboxService {
    */
   public static async testSandboxConnection(clientId: string): Promise<{ success: boolean; message: string; isSandbox: boolean }> {
     try {
-      const res = await fetch('/api/v1/paypal/status');
+      const res = await fetch(getApiUrl('/api/v1/paypal/status'));
       if (res.ok) {
         const data = await res.json();
         return {
@@ -66,7 +68,7 @@ export class PayPalSandboxService {
    */
   public static async createSandboxOrder(order: PayPalOrderRequest): Promise<PayPalOrderResponse> {
     try {
-      const res = await fetch('/api/v1/paypal/orders', {
+      const res = await fetch(getApiUrl('/api/v1/paypal/orders'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -109,7 +111,7 @@ export class PayPalSandboxService {
    */
   public static async captureSandboxOrder(orderId: string): Promise<{ captureId: string; status: string; is_mock: boolean }> {
     try {
-      const res = await fetch(`/api/v1/paypal/orders/${orderId}/capture`, {
+      const res = await fetch(getApiUrl(`/api/v1/paypal/orders/${orderId}/capture`), {
         method: 'POST'
       });
       if (res.ok) {

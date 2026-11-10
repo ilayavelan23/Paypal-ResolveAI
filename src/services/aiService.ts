@@ -1,4 +1,5 @@
 import { AIAgentId, ChatMessage } from '../types';
+import { getApiUrl } from './apiConfig';
 
 export interface AgentReasoningStep {
   agentId: AIAgentId;
@@ -28,7 +29,7 @@ export class MultiAgentCoordinatorService {
 
     // 1. Try Live FastAPI Backend First
     try {
-      const response = await fetch('/api/v1/agents/chat', {
+      const response = await fetch(getApiUrl('/api/v1/agents/chat'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
