@@ -1,0 +1,27 @@
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables & secrets (CRITICAL)
+.env
+.env.*
+.env.txt
+*.env
+*.env.*
+*.env.txt
+!.env.example
+
+# SQLite Database persistence
+*.db
+*.sqlite
+*.sqlite3
+resolveai.db
+
+# Logs
+*.log
