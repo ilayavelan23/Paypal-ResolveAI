@@ -9,7 +9,37 @@
 [![Google Gemini](https://img.shields.io/badge/AI_Model-Google_Gemini_Flash-4285F4?logo=google)](https://aistudio.google.com/)
 [![PayPal Sandbox](https://img.shields.io/badge/Payments-PayPal_Developer_Sandbox-003087?logo=paypal)](https://developer.paypal.com/)
 
+--
+
+# PayPal ResolveAI
+### AI-Powered Payment Resolution Assistant
+
+🚀 **Live Website:** [Open PayPal ResolveAI](https://paypal-resolve-ai.vercel.app)
+
+🔗 **Backend API:** [Render Backend](https://paypal-resolveai.onrender.com)
+
+📖 **API Documentation:** [Swagger UI](https://paypal-resolveai.onrender.com/docs)
+
 ---
+
+## 📋 Table of Contents
+
+- [Overview & Key Features](#overview--key-features)
+- [System Architecture](#system-architecture)
+- [Multi-Agent AI Network](#multi-agent-ai-network)
+- [PayPal Sandbox Integration](#paypal-sandbox-integration)
+- [Technology Stack](#technology-stack)
+- [Installation & Setup](#installation--setup)
+- [Environment Configuration](#environment-configuration)
+- [Running Locally](#running-locally)
+- [Interactive API Documentation](#interactive-api-documentation)
+- [Testing & Verification](#testing--verification)
+- [Deployment Instructions](#deployment-instructions)
+- [Known Limitations & Disclaimers](#known-limitations--disclaimers)
+- [License](#license)
+
+---
+
 
 ## 📋 Table of Contents
 - [Overview & Key Features](#-overview--key-features)
